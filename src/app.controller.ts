@@ -1,16 +1,22 @@
 import { Controller, Get, Render } from '@nestjs/common';
 
-@Controller('test')
+@Controller()
 export class AppController {
-  @Get()
-  @Render('index')
-  test() {
+  @Get('test')
+  @Render('test')
+  test1() {
     return {};
   }
 
-  @Get('*')
-  @Render('index')
-  testAll() {
+  @Get('test/*')
+  @Render('test')
+  test2() {
+    return {};
+  }
+
+  @Get('')
+  @Render('other')
+  otherRoute() {
     return {};
   }
 }
